@@ -1,0 +1,55 @@
+/* SETUP  */
+@import 'setup/vars.css';
+@import 'setup/typography.css';
+
+/* BASE */
+@import 'basic/base.css';
+@import 'basic/layout.css';
+@import 'basic/helpers.css'; 
+@import 'basic/hover.css'; 
+
+/* COMPONENTS */
+@import 'components/main-header.css';
+@import 'components/gallery.css';
+@import 'components/nav.css';
+@import 'components/screen.css';
+
+/* Media Queries */
+@import 'mq/mq.css';
+
+
+
+body{
+    margin: 0;
+}
+
+
+  
+  .gallery {
+    height: 60vh;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  img {
+    width: 400px;
+    height: 400px;
+
+    object-fit: cover;
+    margin: 1rem;
+  }
+
+  canvas{
+    background-color: bisque;
+    max-width: 400px;
+    max-height: 400px;
+  }
+   section.container{
+    display: flex;
+    justify-content: space-around;
+  }
+  .edit-container > *{
+    margin-bottom: 3rem;
+
+  }

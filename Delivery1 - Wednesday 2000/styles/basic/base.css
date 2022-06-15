@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: playfair, serif;
+    color: var(--clr1);
+}
+
+header{
+    height: 104px;
+    background-color: aqua;
+}

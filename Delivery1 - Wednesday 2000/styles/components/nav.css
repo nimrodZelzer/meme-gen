@@ -1,0 +1,14 @@
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav >*{
+    min-height: 58px;
+}
+
+.nav .search-bar{
+    min-height: 58px;
+    margin: 25px 45px 45px 25px;
+}
