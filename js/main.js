@@ -1,29 +1,35 @@
 var gNumOfImages = 18
 var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
+var gKeyWords = ['hello', 'wowo', 'yesss'];
 
-var gImgs = [
-    { id: 1, url: 'images/1.jpg', keywords: ['funny', 'cat'] },
-    { id: 2, url: 'images/2.jpg', keywords: ['funny', 'cat'] },
-    { id: 3, url: 'images/3.jpg', keywords: ['funny', 'cat'] },
-    { id: 4, url: 'images/4.jpg', keywords: ['funny', 'cat'] }
-];
+
+
+
 
 renderGallery()
 
 
 
 function renderGallery() {
-    var strHtml = `<div class="gallery">`
-    for (var i = 0; i < gImgs.length; i++) {
-        strHtml += `<img src="/styles/${gImgs[i].url}" onclick ="renderMeme(this)">`
+    var images = getImages()
+    var keywords = [...gKeyWords].join(" ")
+    console.log(keywords)
+    var strHtml = `<div class="gallery-container">`
+    strHtml += `<div class="nav-gallery">`
+    strHtml += `<input type="search" class="search-bar">`
+    strHtml += `<p class="keywords">${keywords}</p> `
+    strHtml += `<button class="btn-more">more</button> `
+    strHtml += `</div > `
+    strHtml += `<div class="gallery">`
+    for (var i = 0; i < images.length; i++) {
+        strHtml += `<img src ="${images[i].url}" onclick ="renderMeme(${images[i].id})"> `
     }
-    strHtml += `</div>`
+    strHtml += `</div > `
+    strHtml += `</div > `
     document.querySelector('.container').innerHTML = strHtml
 }
 
-function getImageById(id) {
-    return gImgs[id + 1].url
-}
+
 
 function addListeners() {
     addMouseListeners()
